@@ -299,6 +299,7 @@ I extracted VAG UDS CAN IDs from ODIS and my results seem to vary from [this rep
 - **CanPhysReqId**: CAN ID on which the tester sends requests.
 - **CanRespUSDTId**: CAN ID on which the module sends responses.
 - **LINKNAME**: Name of LogicalLink
+- **Name**: Module name from **TEXTID**
 
 ## Source
 
