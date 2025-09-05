@@ -4,6 +4,9 @@ I extracted VAG UDS CAN IDs from ODIS and my results seem to vary from [this rep
 
 ## Main attraction
 
+<details>
+<summary>Press here to show huge table</summary>
+
 | FIVEBAUDADDRESS | TEXTID | CanPhysReqId | CanRespUSDTId | LINKNAME | Name |
 |-----------------|--------|--------------|---------------|----------|------|
 |      01 | SFT00001 | 7E0 | 7E8 | LL_EnginContrModul1UDS | Engine electronics |
@@ -291,6 +294,8 @@ I extracted VAG UDS CAN IDs from ODIS and my results seem to vary from [this rep
 |    BE01 | SFT0BE01 | 180C00CE | 180E00CE | LL_IncabContrProteDevicUDS | High-voltage charging cable 1 |
 |    C002 | SFT0C002 | 17F40028 | 17F62800 | LL_SoftwClustEmbed1UDS | Software Cluster Embedded 1 |
 |    C003 | SFT0C003 | 17F40029 | 17F62900 | LL_SoftwClustHouse1UDS | Software Cluster Housekeeping 1 |
+
+</details>
 
 ## Column explanation
 
