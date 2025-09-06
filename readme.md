@@ -4,9 +4,9 @@ I extracted VAG UDS CAN IDs from ODIS and my results seem to vary from [this rep
 
 I assume the original author extracted the IDs from the `can_ids.properties` that is shipped with ODIS-E for some reason. But I find some things questionable about that data.
 
-For example, for LL_AllWheelContrUDS, request IDs `70F` and `71D` are given. According to my data, `71D` corresponds to `LL_BatteChargUDS`. Sniffing VCDS a little, attempting to connect to module 22 (AWD) will try both `70F` and `71D`.
+For example, for `LL_AllWheelContrUDS`, request IDs `70F` and `71D` are given. According to my data, `71D` corresponds to `LL_BatteChargUDS`. Sniffing VCDS a little, attempting to connect to module `22` ("AWD") will try both `70F` and `71D`.
 
-Module 21 apepars in VCDS as "Engine III/Battery 2" and will try sending UDS to `728`, whereas this ID actually corresponds to `LL_BatteRegulC1UDS` which would be module C1 (it sends to the same ID for module C1 too, so perhaps it is a fallback). In my data, module 21 uses extended CAN IDs.
+Module `21` apepars in VCDS as "Engine III/Battery 2" and will try sending UDS to `728`, whereas this ID actually corresponds to `LL_BatteRegulC1UDS` which would be module `C1` (it sends to the same ID for module `C1` too, so perhaps it is a fallback). In my data, module `21` uses extended CAN IDs.
 
 The only "conflict" in my data appeared for `LL_IncabContrProteDevicUDS` which was incorrectly listed under **TEXTID**=`SFT08119` instead of `SFT0BE01` in one of the projects. Other than that, every ID is unique.
 
