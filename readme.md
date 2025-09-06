@@ -2,6 +2,14 @@
 
 I extracted VAG UDS CAN IDs from ODIS and my results seem to vary from [this repo](https://github.com/ConnorHowell/vag-uds-ids).
 
+I assume the original author extracted the IDs from the `can_ids.properties` that is shipped with ODIS-E for some reason. But I find some things questionable about that data.
+
+For example, for LL_AllWheelContrUDS, request IDs `70F` and `71D` are given. According to my data, `71D` corresponds to `LL_BatteChargUDS`. Sniffing VCDS a little, attempting to connect to module 22 (AWD) will try both `70F` and `71D`.
+
+Module 21 apepars in VCDS as "Engine III/Battery 2" and will try sending UDS to `728`, whereas this ID actually corresponds to `LL_BatteRegulC1UDS` which would be module C1 (it sends to the same ID for module C1 too, so perhaps it is a fallback). In my data, module 21 uses extended CAN IDs.
+
+The only "conflict" in my data appeared for `LL_IncabContrProteDevicUDS` which was incorrectly listed under **TEXTID**=`SFT08119` instead of `SFT0BE01` in one of the projects. Other than that, every ID is unique.
+
 ## Main attraction
 
 <details>
@@ -258,7 +266,7 @@ I extracted VAG UDS CAN IDs from ODIS and my results seem to vary from [this rep
 |    8116 | SFT08116 | 17FC008C | 17FE008C | LL_SoundEnric2UDS | Sound enhancement 2 |
 |    8117 | SFT08117 | 17FC00C9 | 17FE00C9 | LL_AreaViewCamerRearUDS | Rear surroundings camera |
 |    8118 | SFT08118 | 7F1 | 7F9 | LL_Airba2UDS | Airbag 2 |
-|    8119 | SFT08119 | 18040021/180C00CE | 18060021/180E00CE | LL_MultiFunctSteerWheelContrModul3UDS/LL_IncabContrProteDevicUDS | Multifunction Steering Wheel Control Module 3 |
+|    8119 | SFT08119 | 18040021 | 18060021 | LL_MultiFunctSteerWheelContrModul3UDS | Multifunction Steering Wheel Control Module 3 |
 |    811E | SFT0811E | 18040001 | 18060001 | LL_RelayStatiAttacDevic1FrontLeftUDS | Burglary Protection Control Module FL |
 |    811F | SFT0811F | 18040002 | 18060002 | LL_RelayStatiAttacDevic2FrontRightUDS | Burglary Protection Control Module FR |
 |    8120 | SFT08120 | 18040003 | 18060003 | LL_RelayStatiAttacDevic3RearLeftUDS | Burglary Protection Control Module RL |
